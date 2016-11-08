@@ -1,0 +1,24 @@
+{
+  "name": "EatMyTrip",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Kageetai",
+  "url": "http://www.kageetai.net",
+  "license": "MIT License",
+  "keywords": "gulp",
+  "devDependencies": {
+    "browser-sync": "*",
+    "es6-promise": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-csscomb": "*",
+    "gulp-csslint": "*",
+    "gulp-merge-media-queries": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*"
+  }
+}
