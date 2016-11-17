@@ -35,6 +35,8 @@ function get_image_id($image_url) {
 	return $attachment[0];
 }
 
+add_image_size( 'medium-cropped', 300, 300, true );
+
 /**
  * Customizer additions
  */

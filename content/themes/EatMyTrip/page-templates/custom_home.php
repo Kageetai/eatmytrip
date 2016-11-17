@@ -61,9 +61,8 @@ get_header();?>
 				<div class="col span_1_of_3  box-<?php echo $key; ?> animated" data-fx="<?php echo($value); ?>">         
 					<div class="featuretext">
 						<?php if ( get_theme_mod( 'header-'.$key.'-file-upload' ) ) : ?>
-							<?php //$image_id = get_image_id(get_theme_mod( 'header-'.$key.'-file-upload' )); ?>
-							<!--<a href="<?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php //echo wp_get_attachment_image_src($image_id, 'small')[0]; ?>"  alt="<?php //echo esc_attr('feature '.$key)?>"></a>-->
-							<a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'header-'.$key.'-file-upload' ) ); ?>"  alt="<?php echo esc_attr('feature '.$key)?>"></a>
+							<?php $image_id = get_image_id(get_theme_mod( 'header-'.$key.'-file-upload' )); ?>
+							<a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php echo wp_get_attachment_image_src($image_id, 'medium-cropped')[0]; ?>"  alt="<?php echo esc_attr('feature '.$key)?>"></a>
 						<?php else : ?>
 							<?php echo '<p>' . __('Insert Image', 'brasserie') . '</p>'; ?>
 						<?php endif; ?>
