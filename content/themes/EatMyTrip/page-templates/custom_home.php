@@ -43,7 +43,7 @@ get_header();?>
 	<?php  	// Only display if this section is marked for display in customizer.
 		if(!get_theme_mod('hide_promo_bar')): 
 ?>    
-	<div id="featuretext_container">
+	<div class="featuretext_container">
 		<div class="featuretext_top">
 			<h3><?php echo esc_html(get_theme_mod( 'featured_textbox' ) ); ?></h3>
 			<?php if ( get_theme_mod( 'featured_button_url' ) ) : ?>
@@ -77,7 +77,7 @@ get_header();?>
 	<?php  	// Only display if this section is marked for display in customizer.
 	if(!get_theme_mod('hide_promo_bar')):
 		?>
-		<div id="featuretext_container">
+		<div class="featuretext_container">
 			<div class="featuretext_top">
 				<h3><?php echo esc_html(get_theme_mod( 'featured_textbox_2' ) ); ?></h3>
 				<?php if ( get_theme_mod( 'featured_button_url_2' ) ) : ?>
