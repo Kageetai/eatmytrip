@@ -29,9 +29,15 @@ get_header();?>
 	if(!get_theme_mod('hide_feature_text_boxes')): 
 	
 		$list_featureboxes = array(
-			'one' 		=> __('slideInLeft', 'brasserie'),
-			'two'			=> __('fadeInUp', 'brasserie'),
-			'three'			=> __('slideInRight', 'brasserie'),
+			'1'     => __('slideInLeft', 'brasserie'),
+			'2'     => __('fadeInUp', 'brasserie'),
+			'3'     => __('slideInRight', 'brasserie'),
+			'4'     => __('slideInLeft', 'brasserie'),
+			'5'     => __('fadeInUp', 'brasserie'),
+			'6'     => __('slideInRight', 'brasserie'),
+			'7'     => __('slideInLeft', 'brasserie'),
+			'8'     => __('fadeInUp', 'brasserie'),
+			'9'     => __('slideInRight', 'brasserie'),
 		);
 ?>
 	<?php  	// Only display if this section is marked for display in customizer.
@@ -55,6 +61,8 @@ get_header();?>
 				<div class="col span_1_of_3  box-<?php echo $key; ?> animated" data-fx="<?php echo($value); ?>">         
 					<div class="featuretext">
 						<?php if ( get_theme_mod( 'header-'.$key.'-file-upload' ) ) : ?>
+							<?php //$image_id = get_image_id(get_theme_mod( 'header-'.$key.'-file-upload' )); ?>
+							<!--<a href="<?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php //echo wp_get_attachment_image_src($image_id, 'small')[0]; ?>"  alt="<?php //echo esc_attr('feature '.$key)?>"></a>-->
 							<a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'header-'.$key.'-file-upload' ) ); ?>"  alt="<?php echo esc_attr('feature '.$key)?>"></a>
 						<?php else : ?>
 							<?php echo '<p>' . __('Insert Image', 'brasserie') . '</p>'; ?>
@@ -62,7 +70,7 @@ get_header();?>
 						<h2><a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><?php echo esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?></a></h2>
 						<p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?></p>
 					</div>
-				</div><!-- /.col span_1_of_3 animated -->
+				</div>
 			<?php } ?>		
 		</div><!-- /.section group -->
 	</div><!-- /.featuretext_middle -->

@@ -5,12 +5,6 @@
  * @package brasserie
  * @link http://ottopress.com/tag/customizer/
  */
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- *
- */
 
 /**
  * Adds Homepage Promotional Bar Options
@@ -71,10 +65,36 @@ add_action( 'customize_register', 'brasserie_customizer_2' );
  */
 function brasserie_feature_text_boxes_options_2( $wp_customize ){
 
+	class eatmytrip_sub_title extends WP_Customize_Control {
+		public $type = 'sub-title';
+
+		public function render_content() {
+			?>
+			<h2 class="brasserie-custom-sub-title"><?php echo esc_html( $this->label ); ?></h2>
+			<?php
+		}
+	}
+
+	class eatmytrip_footer extends WP_Customize_Control {
+		public $type = 'footer';
+
+		public function render_content() {
+			?>
+			<hr/>
+			<?php
+		}
+	}
+
 	$list_feature_modules = array( // 1
-		'one'		=> __( 'Feature Text Box 1', 'brasserie' ),
-		'two'		=> __( 'Feature Text Box 2', 'brasserie' ),
-		'three'		=> __( 'Feature Text Box 3', 'brasserie' ),
+		'1'	    => __( 'Feature Text Box 1', 'brasserie' ),
+		'2'	    => __( 'Feature Text Box 2', 'brasserie' ),
+		'3'	    => __( 'Feature Text Box 3', 'brasserie' ),
+		'4'	    => __( 'Feature Text Box 4', 'brasserie' ),
+		'5'	    => __( 'Feature Text Box 5', 'brasserie' ),
+		'6'	    => __( 'Feature Text Box 6', 'brasserie' ),
+		'7'	    => __( 'Feature Text Box 7', 'brasserie' ),
+		'8'	    => __( 'Feature Text Box 8', 'brasserie' ),
+		'9'	    => __( 'Feature Text Box 9', 'brasserie' ),
 	);
 	$wp_customize->add_section( 'brasserie_customizer_feature_text_boxes', array(
 		'title'    => __( 'Homepage - Feature Text Boxes', 'brasserie' ),
@@ -90,7 +110,7 @@ function brasserie_feature_text_boxes_options_2( $wp_customize ){
             'sanitize_callback' => 'brasserie_sanitize_text',
         ));
 		$wp_customize->add_control(
-			new brasserie_sub_title( $wp_customize, 'brasserie_' . $key . '_sub_title', array(
+			new eatmytrip_sub_title( $wp_customize, 'brasserie_' . $key . '_sub_title', array(
 					'label'		=> $value,
 					'section'   => 'brasserie_customizer_feature_text_boxes',
 					'settings'  => 'brasserie_' . $key . '_sub_title',
@@ -103,7 +123,7 @@ function brasserie_feature_text_boxes_options_2( $wp_customize ){
             'sanitize_callback' => 'brasserie_sanitize_upload',
         ) );
 		$wp_customize->add_control(
-		    new WP_Customize_Upload_Control($wp_customize, 'header-'.$key.'-file-upload', array(
+		    new WP_Customize_Image_Control($wp_customize, 'header-'.$key.'-file-upload', array(
 		            'label' => __( 'File Upload', 'brasserie' ),
 		            'section' => 'brasserie_customizer_feature_text_boxes',
 		            'settings' => 'header-'.$key.'-file-upload',
@@ -163,7 +183,7 @@ function brasserie_feature_text_boxes_options_2( $wp_customize ){
             'sanitize_callback' => 'brasserie_sanitize_text',
         ));
 		$wp_customize->add_control(
-			new brasserie_footer( $wp_customize, 'brasserie_' . $key . '_footer', array(
+			new eatmytrip_footer( $wp_customize, 'brasserie_' . $key . '_footer', array(
 			'label'		=> $value,
 			'section'   => 'brasserie_customizer_feature_text_boxes',
 			'settings'  => 'brasserie_' . $key . '_footer',
@@ -171,5 +191,9 @@ function brasserie_feature_text_boxes_options_2( $wp_customize ){
 		) ) );
 	}// end foreach
 }
-//add_action( 'customize_register', 'brasserie_feature_text_boxes_options_2' );
+add_action( 'customize_register', 'brasserie_feature_text_boxes_options_2' );
 
+function remove_parent_theme_stuff() {
+	remove_action( 'customize_register', 'brasserie_feature_text_boxes_options' );
+}
+add_action( 'after_setup_theme', 'remove_parent_theme_stuff', 0 );
