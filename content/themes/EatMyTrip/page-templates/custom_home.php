@@ -46,7 +46,9 @@ get_header();?>
 			<h3><?php echo esc_html(get_theme_mod( 'featured_textbox' ) ); ?></h3>
 			<?php if ( get_theme_mod( 'featured_button_url' ) ) : ?>
 				<div class="featuretext_button animated" data-fx="slideInRight">
-					<a href="<?php echo esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" ><?php if(get_theme_mod('featured_btn_textbox')): echo(get_theme_mod('featured_btn_textbox')); else: echo __('Find out more', 'brasserie'); endif;?></a>
+					<a href="<?php echo esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" >
+                        <?php if(get_theme_mod('featured_btn_textbox')): echo(get_theme_mod('featured_btn_textbox')); else: echo __('Find out more', 'brasserie'); endif;?>
+                    </a>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -60,11 +62,17 @@ get_header();?>
 					<div class="featuretext">
 						<?php if ( get_theme_mod( 'header-'.$key.'-file-upload' ) ) : ?>
 							<?php $image_id = get_image_id(get_theme_mod( 'header-'.$key.'-file-upload' )); ?>
-							<a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><img src="<?php echo wp_get_attachment_image_src($image_id, 'medium-cropped')[0]; ?>"  alt="<?php echo esc_attr('feature '.$key)?>"></a>
+<!--							<a href="--><?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?><!--">-->
+                                <img src="<?php echo wp_get_attachment_image_src($image_id, 'medium-cropped')[0]; ?>"  alt="<?php echo esc_attr('feature '.$key)?>">
+<!--                            </a>-->
 						<?php else : ?>
 							<?php echo '<p>' . __('Insert Image', 'brasserie') . '</p>'; ?>
 						<?php endif; ?>
-						<h2><a href="<?php echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?>"><?php echo esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?></a></h2>
+						<h2>
+<!--                            <a href="--><?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?><!--">-->
+                                <?php echo esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?>
+<!--                            </a>-->
+                        </h2>
 						<p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?></p>
 					</div>
 				</div>
