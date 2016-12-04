@@ -22,8 +22,7 @@ get_header();?>
 			 		
 			 endif;
 			 
-		endif;
-    ?>
+		endif; ?>
 <?php  	
 	// Only display if this section is marked for display in customizer		
 	if(!get_theme_mod('hide_feature_text_boxes')): 
@@ -41,19 +40,18 @@ get_header();?>
 		);
 ?>
 	<?php  	// Only display if this section is marked for display in customizer.
-		if(!get_theme_mod('hide_promo_bar')): 
-?>    
+		if(!get_theme_mod('hide_promo_bar')):  ?>
 	<div class="featuretext_container">
 		<div class="featuretext_top">
 			<h3><?php echo esc_html(get_theme_mod( 'featured_textbox' ) ); ?></h3>
 			<?php if ( get_theme_mod( 'featured_button_url' ) ) : ?>
 				<div class="featuretext_button animated" data-fx="slideInRight">
 					<a href="<?php echo esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" ><?php if(get_theme_mod('featured_btn_textbox')): echo(get_theme_mod('featured_btn_textbox')); else: echo __('Find out more', 'brasserie'); endif;?></a>
-				</div>  
+				</div>
 			<?php endif; ?>
-		</div> 
+		</div>
 	</div>
-<?php endif; ?>
+    <?php endif; ?>
     
 	<div class="featuretext_middle">
 		<div class="section group">
@@ -75,8 +73,7 @@ get_header();?>
 	</div><!-- /.featuretext_middle -->
 
 	<?php  	// Only display if this section is marked for display in customizer.
-	if(!get_theme_mod('hide_promo_bar')):
-		?>
+	if(!get_theme_mod('hide_promo_bar')): ?>
 		<div class="featuretext_container">
 			<div class="featuretext_top">
 				<h3><?php echo esc_html(get_theme_mod( 'featured_textbox_2' ) ); ?></h3>
@@ -89,11 +86,16 @@ get_header();?>
 		</div>
 	<?php endif; ?>
 
+    <div class="featuretext-panorama" style="background-image: url(<?= content_url(); ?>/uploads/2016/11/photo-10.jpg);">
+        <div class="flex-caption">
+            <div class="flex-caption-title"><h3>Build your own epic cake!</h3></div>
+        </div>
+    </div>
+
 <?php endif; ?>
         
 <?php  	// Only display if this section is marked for display in customizer.
-		if(!get_theme_mod('hide_recent_posts')): 
-?>      
+		if(!get_theme_mod('hide_recent_posts')): ?>
 	
 			<div class="section_thumbnails group">
 				<?php echo '<h3>' . __('From the blog', 'brasserie') . '</h3>'; ?>
