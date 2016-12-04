@@ -1,3 +1,5 @@
+$gold: #c59d5f;
+
 .stickyHead {
   padding: 10px 0;
 }
@@ -73,4 +75,18 @@
 
 .site-footer {
   border-top: none;
+}
+
+.elementor-widget-button .elementor-button {
+  background-color: $gold !important;
+  color: white;
+
+  &:visited {
+    color: white;
+  }
+
+  &:active,
+  &:hover {
+    color: whitesmoke;
+  }
 }
