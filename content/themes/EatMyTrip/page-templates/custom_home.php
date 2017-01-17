@@ -43,10 +43,10 @@ get_header();?>
 		if(!get_theme_mod('hide_promo_bar')):  ?>
 	<div class="featuretext_container">
 		<div class="featuretext_top">
-			<h3><?php echo esc_html(get_theme_mod( 'featured_textbox' ) ); ?></h3>
+			<h3><?= esc_html(get_theme_mod( 'featured_textbox' ) ); ?></h3>
 			<?php if ( get_theme_mod( 'featured_button_url' ) ) : ?>
 				<div class="featuretext_button animated" data-fx="slideInRight">
-					<a href="<?php echo esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" >
+					<a href="<?= esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" >
                         <?php if(get_theme_mod('featured_btn_textbox')): echo(get_theme_mod('featured_btn_textbox')); else: echo __('Find out more', 'brasserie'); endif;?>
                     </a>
 				</div>
@@ -58,22 +58,23 @@ get_header();?>
 	<div class="featuretext_middle">
 		<div class="section group">
 			<?php foreach($list_featureboxes as $key => $value){ ?>
-				<div class="col span_1_of_3  box-<?php echo $key; ?> animated" data-fx="<?php echo($value); ?>">         
+				<div class="col span_1_of_3  box-<?= $key; ?> animated" data-fx="<?php echo($value); ?>">         
 					<div class="featuretext">
 						<?php if ( get_theme_mod( 'header-'.$key.'-file-upload' ) ) : ?>
 							<?php $image_id = get_image_id(get_theme_mod( 'header-'.$key.'-file-upload' )); ?>
 <!--							<a href="--><?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?><!--">-->
-                                <img src="<?php echo wp_get_attachment_image_src($image_id, 'medium-cropped')[0]; ?>"  alt="<?php echo esc_attr('feature '.$key)?>">
+                            <img src="<?= wp_get_attachment_image_src( $image_id, 'large' )[0]; ?>"
+                                 alt="<?= esc_html( get_theme_mod( 'featured_textbox_header_' . $key ) ) ?>">
 <!--                            </a>-->
 						<?php else : ?>
-							<?php echo '<p>' . __('Insert Image', 'brasserie') . '</p>'; ?>
+							<?= '<p>' . __('Insert Image', 'brasserie') . '</p>'; ?>
 						<?php endif; ?>
 						<h2>
 <!--                            <a href="--><?php //echo esc_url( get_theme_mod( 'header_'.$key.'_url' ) ); ?><!--">-->
-                                <?php echo esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?>
+                                <?= esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?>
 <!--                            </a>-->
                         </h2>
-						<p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?></p>
+						<p><?= esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?></p>
 					</div>
 				</div>
 			<?php } ?>		
@@ -84,10 +85,10 @@ get_header();?>
 	if(!get_theme_mod('hide_promo_bar')): ?>
 		<div class="featuretext_container">
 			<div class="featuretext_top">
-				<h3><?php echo esc_html(get_theme_mod( 'featured_textbox_2' ) ); ?></h3>
+				<h3><?= esc_html(get_theme_mod( 'featured_textbox_2' ) ); ?></h3>
 				<?php if ( get_theme_mod( 'featured_button_url_2' ) ) : ?>
 					<div class="featuretext_button animated" data-fx="slideInRight">
-						<a href="<?php echo esc_url( get_theme_mod( 'featured_button_url_2' ) ); ?>" ><?php if(get_theme_mod('featured_btn_textbox_2')): echo(get_theme_mod('featured_btn_textbox_2')); else: echo __('Find out more', 'brasserie'); endif;?></a>
+						<a href="<?= esc_url( get_theme_mod( 'featured_button_url_2' ) ); ?>" ><?php if(get_theme_mod('featured_btn_textbox_2')): echo(get_theme_mod('featured_btn_textbox_2')); else: echo __('Find out more', 'brasserie'); endif;?></a>
 					</div>
 				<?php endif; ?>
 			</div>
@@ -106,7 +107,7 @@ get_header();?>
 		if(!get_theme_mod('hide_recent_posts')): ?>
 	
 			<div class="section_thumbnails group">
-				<?php echo '<h3>' . __('From the blog', 'brasserie') . '</h3>'; ?>
+				<?= '<h3>' . __('From the blog', 'brasserie') . '</h3>'; ?>
 				<?php $the_query = new WP_Query(array(
 					'showposts' => 4,
 					'post__not_in' => get_option("sticky_posts"),
@@ -124,7 +125,7 @@ get_header();?>
 								?> 
 								<div class="recent_title">
 									<h2><?php the_title(); ?></h2>
-                                    <p><?php echo brasserie_get_recentposts_excerpt(); ?>...</p>
+                                    <p><?= brasserie_get_recentposts_excerpt(); ?>...</p>
 								</div>
 							</a>
 						</article>
@@ -149,36 +150,36 @@ get_header();?>
 			<div class="col span_1_of_4">
 				<div class="client_recent">
 					<?php if ( get_theme_mod( 'brasserie_one_logo_upload' ) ) : ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'brasserie_one_company_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'brasserie_one_logo_upload' ) ); ?>"  alt="<?php echo __('special one', 'brasserie')?>"></a>
+						<a href="<?= esc_url( get_theme_mod( 'brasserie_one_company_url' ) ); ?>"><img src="<?= esc_url( get_theme_mod( 'brasserie_one_logo_upload' ) ); ?>"  alt="<?= __('special one', 'brasserie')?>"></a>
 					<?php else : ?>
-						<?php echo '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
+						<?= '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
 					<?php endif; ?>
 				</div>
 			</div>
 			<div class="col span_1_of_4">
 				<div class="client_recent">
 					<?php if ( get_theme_mod( 'brasserie_two_logo_upload' ) ) : ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'brasserie_two_company_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'brasserie_two_logo_upload' ) ); ?>"  alt="<?php echo __('special two', 'brasserie')?>"></a>
+						<a href="<?= esc_url( get_theme_mod( 'brasserie_two_company_url' ) ); ?>"><img src="<?= esc_url( get_theme_mod( 'brasserie_two_logo_upload' ) ); ?>"  alt="<?= __('special two', 'brasserie')?>"></a>
 					<?php else : ?>
-						<?php echo '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
+						<?= '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
 					<?php endif; ?>
 				</div>
 			</div>
 			<div class="col span_1_of_4">
 				<div class="client_recent">
 					<?php if ( get_theme_mod( 'brasserie_three_logo_upload' ) ) : ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'brasserie_three_company_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'brasserie_three_logo_upload' ) ); ?>"  alt="<?php echo __('special three', 'brasserie')?>"></a>
+						<a href="<?= esc_url( get_theme_mod( 'brasserie_three_company_url' ) ); ?>"><img src="<?= esc_url( get_theme_mod( 'brasserie_three_logo_upload' ) ); ?>"  alt="<?= __('special three', 'brasserie')?>"></a>
 					<?php else : ?>
-						<?php echo '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
+						<?= '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
 					<?php endif; ?>
 				</div>
 			</div>
 			<div class="col span_1_of_4">
 				<div class="client_recent">
 					<?php if ( get_theme_mod( 'brasserie_four_logo_upload' ) ) : ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'brasserie_four_company_url' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'brasserie_four_logo_upload' ) ); ?>"  alt="<?php echo __('special four', 'brasserie')?>"></a>
+						<a href="<?= esc_url( get_theme_mod( 'brasserie_four_company_url' ) ); ?>"><img src="<?= esc_url( get_theme_mod( 'brasserie_four_logo_upload' ) ); ?>"  alt="<?= __('special four', 'brasserie')?>"></a>
 					<?php else : ?>
-						<?php echo '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
+						<?= '<h4>' . __('Insert Image', 'brasserie') . '</h4>'; ?>
 					<?php endif; ?>
 				</div>
 			</div>
