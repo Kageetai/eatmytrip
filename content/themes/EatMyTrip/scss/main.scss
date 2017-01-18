@@ -100,14 +100,29 @@ $cyan: #43C0C2;
 .featuretext_container {
   position: relative;
   width: 100%;
-  max-width: 1160px;
   padding: 10px 0;
-  margin: 0 auto 40px;
-  border-radius: 0.6em;
-  background: #FFF;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1), 0 -5px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px auto 50px;
+  background: $cyan;
+  //box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1), 0 -5px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  color: white;
   z-index: 700;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: $cyan;
+  }
+
+  &:after {
+    top: inherit;
+    bottom: -10px;
+  }
 }
 
 .featuretext_middle {
