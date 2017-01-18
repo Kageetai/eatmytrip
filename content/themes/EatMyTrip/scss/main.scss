@@ -39,6 +39,9 @@ $cyan: #43C0C2;
   }
 
   .main-navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     vertical-align: bottom;
     height: $nav-height;
     width: 45%;
@@ -52,6 +55,14 @@ $cyan: #43C0C2;
       font-size: 16px;
       height: $nav-height;
       line-height: $nav-height;
+    }
+
+    ul > li > ul {
+      width: auto;
+    }
+
+    ul > li:hover > ul {
+      top: $nav-height;
     }
   }
 }
