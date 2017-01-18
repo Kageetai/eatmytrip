@@ -1,4 +1,6 @@
 $logo-height: 150px;
+$header-height: 100px;
+$nav-height: $header-height / 2;
 $gold: #c59d5f;
 $cyan: #43C0C2;
 
@@ -15,24 +17,42 @@ $cyan: #43C0C2;
 }
 
 .header_container {
+  position: relative;
+  overflow-y: visible;
   background-color: transparent;
-}
+  height: $header-height;
+  z-index: 100;
 
-.site-logo {
-  display: inline-block;
-  text-align: center;
+  .site-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    text-align: center;
 
-  > a {
+    > a {
 
-    > img {
-      height: 100px;
+      > img {
+        height: $logo-height;
+      }
     }
   }
-}
 
-.main-navigation {
-  a {
-    font-size: 16px;
+  .main-navigation {
+    vertical-align: bottom;
+    height: $nav-height;
+    width: 45%;
+
+    li {
+      background-color: transparent;
+      vertical-align: bottom;
+    }
+
+    a {
+      font-size: 16px;
+      height: $nav-height;
+      line-height: $nav-height;
+    }
   }
 }
 
