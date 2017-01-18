@@ -74,7 +74,7 @@ get_header();?>
                                 <?= esc_html(get_theme_mod( 'featured_textbox_header_'.$key ) ); ?>
 <!--                            </a>-->
                         </h2>
-						<p><?= esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?></p>
+<!--						<p>--><?//= esc_html(get_theme_mod( 'featured_textbox_text_'.$key ) ); ?><!--</p>-->
 					</div>
 				</div>
 			<?php } ?>		
