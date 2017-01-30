@@ -87,6 +87,10 @@ $cyan: #43C0C2;
   }
 }
 
+.header-image {
+  margin-bottom: -74px;
+}
+
 .flex-caption-title,
 .featuretext {
 
@@ -97,13 +101,15 @@ $cyan: #43C0C2;
   }
 }
 
-.featuretext_container {
+.featuretext_container,
+.entry-header {
   position: relative;
   width: 100%;
   padding: 10px 0;
   margin: 10px auto 50px;
   background: $cyan;
   //box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1), 0 -5px 12px rgba(0, 0, 0, 0.1);
+  border: none;
   text-align: center;
   color: white;
   z-index: 700;
@@ -122,6 +128,11 @@ $cyan: #43C0C2;
   &:after {
     top: inherit;
     bottom: -10px;
+  }
+
+  .page-title {
+    color: inherit;
+    text-shadow: none;
   }
 }
 
