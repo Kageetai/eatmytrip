@@ -5,6 +5,10 @@ $gold: #c59d5f;
 $cyan: #52babb;
 $brand-color: $cyan;
 
+.section {
+  padding: 0;
+}
+
 @import "homepage";
 @import "header";
 @import "footer";

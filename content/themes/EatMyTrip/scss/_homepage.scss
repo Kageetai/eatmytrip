@@ -73,10 +73,6 @@
 // Feature Boxes
 .featuretext_middle {
 
-  .section {
-    padding: 0;
-  }
-
   .col.span_1_of_3 {
     &:nth-child(3n+1) {
       margin-left: 0;
@@ -122,6 +118,8 @@
 .featuretext-panorama {
   position: relative;
   height: 700px;
+  background-position: center;
+  background-size: cover;
   color: white;
 
   .flex-caption {
