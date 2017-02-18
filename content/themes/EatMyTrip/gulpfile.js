@@ -37,7 +37,7 @@ gulp.task('scss', function () {
       .pipe(cleanCss())
       // .pipe(sourcemaps.write())
       .pipe(gulp.dest('dist/css'))
-      .pipe(browserSync.reload());
+      .pipe(browserSync.stream());
       // .pipe(notify('css task finished'))
 });
 
@@ -63,7 +63,7 @@ gulp.task('js', function () {
 
 gulp.task('default', function () {
   browserSync.init({
-    files: ['**/*.php', '*.php', 'css/*.css', 'js/*.js'],
+    files: ['**/*.php', '*.php', 'dist/css/*.css', 'dist/js/*.js'],
     open: false,
     proxy: "http://localhost/eatmytrip/",
     snippetOptions: {
