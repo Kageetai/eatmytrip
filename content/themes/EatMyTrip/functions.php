@@ -4,25 +4,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// BEGIN ENQUEUE PARENT ACTION
-// AUTO GENERATED - Do not modify or remove comment markers above or below:
+function eatmytrip_styles() {
+	$parent_style = 'brasserie'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
 
-function chld_thm_cfg_parent_css() {
-	wp_enqueue_style( 'chld_thm_cfg_parent', get_template_directory_uri() . '/style.css', array() );
+	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+	if (is_page_template( 'page-templates/custom_home.php' )) {
+		wp_enqueue_style( 'eatmytrip-style',
+			get_stylesheet_directory_uri() . '/css/main.css',
+			array( $parent_style, 'flexslider', 'font-awesome', 'animate', 'style' ),
+			wp_get_theme()->get( 'Version' )
+		);
+	} else {
+		wp_enqueue_style( 'eatmytrip-style',
+			get_stylesheet_directory_uri() . '/css/main.css',
+			array( $parent_style ),
+			wp_get_theme()->get('Version')
+		);
+	}
 }
-add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
-
-function child_theme_configurator_css() {
-	wp_enqueue_style( 'chld_thm_cfg_separate', get_stylesheet_directory_uri() . '/css/main.css', array(
-		'chld_thm_cfg_parent',
-		'style',
-		'font-awesome',
-		'animate'
-	) );
-}
-add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css' );
-
-// END ENQUEUE PARENT ACTION
+add_action( 'wp_enqueue_scripts', 'eatmytrip_styles' );
 
 function get_image_id($image_url) {
 	global $wpdb;
