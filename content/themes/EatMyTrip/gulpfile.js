@@ -37,7 +37,7 @@ gulp.task('scss', function () {
       .pipe(cleanCss())
       // .pipe(sourcemaps.write())
       .pipe(gulp.dest('dist/css'))
-      .pipe(browserSync.stream({match: 'dist/**/*.css'}));
+      .pipe(browserSync.reload());
       // .pipe(notify('css task finished'))
 });
 
@@ -57,11 +57,11 @@ gulp.task('js', function () {
       }))
       .pipe(uglify())
       .pipe(gulp.dest('dist/js'))
-      .pipe(browserSync.stream());
+      .pipe(browserSync.reload());
       // .pipe(notify('js task finished'))
 });
 
-gulp.task('default', ['js', 'scss'], function () {
+gulp.task('default', function () {
   browserSync.init({
     files: ['**/*.php', '*.php', 'css/*.css', 'js/*.js'],
     open: false,
