@@ -5,20 +5,26 @@
   "author": "Kageetai",
   "url": "http://www.kageetai.net",
   "license": "MIT License",
-  "keywords": "gulp",
+  "keywords": [
+    "gulp"
+  ],
   "devDependencies": {
     "browser-sync": "*",
+    "csslint": "^1.0.5",
     "es6-promise": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-clean-css": "*",
     "gulp-csscomb": "*",
-    "gulp-csslint": "*",
+    "gulp-csslint": "^1.0.0",
+    "gulp-jshint": "^2.0.4",
     "gulp-merge-media-queries": "*",
+    "gulp-notify": "*",
     "gulp-plumber": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
-    "gulp-uglify": "*"
+    "gulp-uglify": "*",
+    "jshint": "^2.9.4"
   }
 }
