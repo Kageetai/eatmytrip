@@ -9,13 +9,13 @@
 				<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 				<li>
 					<?php the_post_thumbnail(); ?>
-					<div class="caption_wrap">
-						<div class="flex-caption">
-							<div class="flex-caption-title">
-								<h3><?php the_title(); ?></h3>
-							</div>
-						</div>
-					</div>
+<!--					<div class="caption_wrap">-->
+<!--						<div class="flex-caption">-->
+<!--							<div class="flex-caption-title">-->
+<!--								<h3>--><?php //the_title(); ?><!--</h3>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
 				</li>
 				<?php
 				endwhile;
