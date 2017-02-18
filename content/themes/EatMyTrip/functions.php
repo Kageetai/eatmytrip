@@ -10,13 +10,13 @@ function eatmytrip_styles() {
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 	if (is_page_template( 'page-templates/custom_home.php' )) {
 		wp_enqueue_style( 'eatmytrip-style',
-			get_stylesheet_directory_uri() . '/css/main.css',
+			get_stylesheet_directory_uri() . '/dist/css/main.css',
 			array( $parent_style, 'flexslider', 'font-awesome', 'animate', 'style' ),
 			wp_get_theme()->get( 'Version' )
 		);
 	} else {
 		wp_enqueue_style( 'eatmytrip-style',
-			get_stylesheet_directory_uri() . '/css/main.css',
+			get_stylesheet_directory_uri() . '/dist/css/main.css',
 			array( $parent_style ),
 			wp_get_theme()->get('Version')
 		);
