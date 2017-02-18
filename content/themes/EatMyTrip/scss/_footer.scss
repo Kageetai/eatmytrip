@@ -1,3 +1,12 @@
 .site-footer {
   border-top: none;
+
+  .site-info {
+    background-color: transparent;
+    padding: 1em 0;
+  }
+}
+
+#smoothup {
+  background-color: $cyan;
 }
