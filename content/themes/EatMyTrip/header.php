@@ -57,11 +57,12 @@
 		</div><!-- .stickyHead -->
 	</div><!-- #masthead-wrap -->
 	<div id="main" class="site-main">
-    <div class="header-image">
 
 	<?php
 		$header_image = get_header_image();
 		if( ! empty( $header_image) ){
+
+		    echo "<div class='header-image'>";
 
 			if( get_theme_mod('header_homepage_only') ){
 				if( is_front_page() ){
@@ -85,12 +86,15 @@
 				<?php
 			}
 
-		} elseif ( is_page() ){
+			echo "</div>";
+
+		} elseif ( is_page() && has_post_thumbnail() ){
 			?>
+            <div class="header-image">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php	the_post_thumbnail('header'); ?>
 				</a>
+            </div>
 			<?php
 		}
 	?>
-	</div>
