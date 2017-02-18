@@ -15,7 +15,7 @@ local-config.php
 wp-config.php
 
 # Custom theme files
-content/themes/EatMyTrip/css
+content/themes/EatMyTrip/dist
 
 # Operating system files
 .Spotlight-V100

@@ -1,9 +1,8 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
-var sourcemaps = require('gulp-sourcemaps');
+// var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var csslint = require('gulp-csslint');
 var autoPrefixer = require('gulp-autoprefixer');
@@ -31,14 +30,14 @@ gulp.task('scss', function () {
       .pipe(cmq({log: true}))
       .pipe(csslint())
       .pipe(csslint.formatter())
-      .pipe(gulp.dest('css'))
+      .pipe(gulp.dest('dist/css'))
       .pipe(rename({
         suffix: '.min'
       }))
       .pipe(cleanCss())
       // .pipe(sourcemaps.write())
-      .pipe(gulp.dest('css'))
-      .pipe(reload({stream: true}));
+      .pipe(gulp.dest('dist/css'))
+      .pipe(browserSync.stream({match: 'dist/**/*.css'}));
       // .pipe(notify('css task finished'))
 });
 
@@ -52,13 +51,13 @@ gulp.task('js', function () {
       }))
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
-      .pipe(gulp.dest('js'))
+      .pipe(gulp.dest('dist/js'))
       .pipe(rename({
         suffix: '.min'
       }))
       .pipe(uglify())
-      .pipe(gulp.dest('js'))
-      .pipe(reload());
+      .pipe(gulp.dest('dist/js'))
+      .pipe(browserSync.stream());
       // .pipe(notify('js task finished'))
 });
 
