@@ -33,14 +33,25 @@
     <div id="masthead-wrap">
 		<header id="masthead" class="site-header header_container" role="banner">
 		    <?php if ( get_theme_mod( 'brasserie_logo' ) ) : ?>
-                <div class="site-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                       title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <img src="<?php echo esc_url( get_theme_mod( 'brasserie_logo' ) ); ?>"
-                             alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-                    </a>
-                    <img class="svg logo-background" src="<?= get_stylesheet_directory_uri() ?>/img/logo-nav-back.svg" alt="logo background">
-                </div>
+			    <?php if ( is_front_page() ): ?>
+                    <div class="site-logo">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                           title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <img src="<?php echo esc_url( get_theme_mod( 'brasserie_logo' ) ); ?>"
+                                 alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                        </a>
+                        <img class="svg logo-background"
+                             src="<?= get_stylesheet_directory_uri() ?>/img/logo-nav-back.svg" alt="logo background">
+                    </div>
+			    <?php else : ?>
+                    <div class="site-logo site-logo-text">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                           title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <img src="<?= get_stylesheet_directory_uri() ?>/img/logo-text.png"
+                                 alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                        </a>
+                    </div>
+			    <?php endif; ?>
 		<?php else : ?>
 		
 				<div class="site-introduction">

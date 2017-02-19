@@ -7,16 +7,22 @@
   background-color: transparent;
 
   .site-logo {
+    height: $logo-height;
+    min-height: initial;
     z-index: 1;
+
+    &.site-logo-text {
+      height: $header-height;
+    }
 
     > .logo-background {
       display: none;
     }
 
-      > a {
+    > a {
 
       > img {
-        height: $logo-height;
+        max-height: 100%;
       }
     }
   }
@@ -52,6 +58,10 @@
     .site-logo {
       position: relative;
       margin: 7px 15px;
+
+      &.site-logo-text {
+        margin: 0 15px;
+      }
 
       > .logo-background {
         display: block;
