@@ -5,3 +5,32 @@
 .header-image + .entry-header {
   margin-top: 10px;
 }
+
+.recipe-heading {
+  border-bottom: $grey-border;
+
+  > .blog-image,
+  > .recipe-fields {
+    float: left;
+  }
+
+  > .blog-image {
+    > img {
+      display: block;
+    }
+  }
+
+  > .recipe-fields {
+    clear: none;
+    padding: 15px;
+    border-bottom: none;
+
+    > .entry-meta {
+      padding-left: 0;
+    }
+  }
+}
+
+#content {
+  margin: 0;
+}

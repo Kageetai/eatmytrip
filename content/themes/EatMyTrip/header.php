@@ -33,7 +33,7 @@
     <div id="masthead-wrap">
 		<header id="masthead" class="site-header header_container" role="banner">
 		    <?php if ( get_theme_mod( 'brasserie_logo' ) ) : ?>
-			    <?php if ( is_front_page() || has_post_thumbnail() ): ?>
+			    <?php if ( is_front_page() || ( has_post_thumbnail() && ! is_singular( 'recipe' ) ) ) { ?>
                     <div class="site-logo">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                            title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -43,7 +43,7 @@
                         <img class="svg logo-background"
                              src="<?= get_stylesheet_directory_uri() ?>/img/logo-nav-back.svg" alt="logo background">
                     </div>
-			    <?php else : ?>
+			    <?php } else { ?>
                     <div class="site-logo site-logo-text">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                            title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -51,7 +51,7 @@
                                  alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                         </a>
                     </div>
-			    <?php endif; ?>
+			    <?php } ?>
 		<?php else : ?>
 		
 				<div class="site-introduction">
