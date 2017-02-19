@@ -45,3 +45,5 @@ add_image_size( 'medium-cropped', 300, 300, true );
  * Customizer additions
  */
 require( get_stylesheet_directory() . '/inc/customizer.php' );
+
+require( get_stylesheet_directory() . '/inc/post-types.php' );
