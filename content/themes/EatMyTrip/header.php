@@ -33,7 +33,7 @@
     <div id="masthead-wrap">
 		<header id="masthead" class="site-header header_container" role="banner">
 		    <?php if ( get_theme_mod( 'brasserie_logo' ) ) : ?>
-			    <?php if ( is_front_page() ): ?>
+			    <?php if ( is_front_page() || has_post_thumbnail() ): ?>
                     <div class="site-logo">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                            title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
