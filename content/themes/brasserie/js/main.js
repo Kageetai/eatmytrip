@@ -1,26 +1,31 @@
 ( function( $ ) {
-	
-	
+
+    var container = document.querySelector('.gallery');
+    var msnry = new Masonry( container, {
+        itemSelector: '.gallery-item',
+        columnWidth: '.gallery-item',                
+      });
+
 	/*
 	 * Animate elements with .animated class name and use the data-fx as the animation type
-	 */ 
+	 */
  	$(".animated").on("inview", function(isVisible) {
 	  // Event is triggered once the element becomes visible in the browser's viewport, and once when it becomes invisible
 	  if (isVisible) {
 		  $(this).css('visibility','visible');
-		  $(this).addClass($(this).data('fx')); 
+		  $(this).addClass($(this).data('fx'));
 	  }
 	});
-	
+
 	$('.top-search a').on('click', function(e){
 		e.preventDefault();
 		$('.show-search,.top-search').toggleClass('live');
 		$('#s').focus();
 	});
-	
-	
+
+
 	var brasserie_header_height = $('.stickyHead').innerHeight() + $('#topbar_container').innerHeight();
-	
+
 
     function brasserie_sticky() {
         if ($('body').hasClass('sticky-header') && $(window).width() > 1000 ) {
@@ -48,21 +53,21 @@
             }
         }
     }
-	$(window).scroll(function() { 
+	$(window).scroll(function() {
 		brasserie_sticky();
 	});
 
-	
 
-	
+
+
 	/*
 	 * tooltip-ize all links with title attributes, except Site title.
 	 */
 	$('.hastip').tooltipsy({
 		offset: [0, 10]
 	});
-	
-	
+
+
 	// accordion style navigation for small screens.
 	var $window = $(window);
 	var windowsize = $window.width();
@@ -75,6 +80,5 @@
 		var child = clickedLink.siblings('ul');
 		child.toggleClass('show');
 	});
-	
-} )( jQuery );
 
+} )( jQuery );

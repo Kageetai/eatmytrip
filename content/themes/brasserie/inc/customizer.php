@@ -939,6 +939,8 @@ function brasserie_hide_show_elements($wp_customize){
 
 }
 add_action( 'customize_register', 'brasserie_hide_show_elements');
+
+
 // SANITIZATION
 // ==============================
 // Sanitize Text

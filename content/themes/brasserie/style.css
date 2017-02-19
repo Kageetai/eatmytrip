@@ -3,11 +3,12 @@ Theme Name: Brasserie
 Theme URI: http://www.templateexpress.com/brasserie-theme/
 Author: Template Express
 Author URI: http://www.templateexpress.com/
-Description: Brasserie is a full-width, fully responsive and highly customizable WordPress Theme. This Restaurant theme is WooCommerce Supported. Add your own logo, header, featured areas, social media links and much more. This versatile theme also has several different layouts, unlimited colors google font options. Brasserie looks great on devices of all sizes.
-Version: 1.9.5
+Description: Brasserie is a full-width, fully responsive and highly customizable WordPress Restaurant Theme. This Restaurant theme is WooCommerce Supported. Add your own logo, header, featured areas, social media links and much more. This versatile theme also has several different layouts, unlimited colors google font options. Brasserie looks great on devices of all sizes.
+Version: 1.9.7
 License: GNU General Public License v2.0
 License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, left-sidebar, right-sidebar, editor-style, custom-background, food-and-drink, e-commerce
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, left-sidebar, right-sidebar, editor-style, custom-background, food-and-drink, e-commerce, footer-widgets
+
 Text Domain: brasserie
 This theme, like WordPress, is licensed under the GPL.
 
@@ -2336,6 +2337,9 @@ MEDIA QUERIES
 	height: 100%;
 	width: 100%;
 }
+.flex-container{
+	margin-bottom: 0!important;
+}
 }
 
 /* for 800px or less */
@@ -2682,11 +2686,286 @@ MEDIA QUERIES
 		width: 100%;
 	}
 }
-
 a.rev_slide_button {
 color: #FFF;
 }
 
-rev_slide_button:hover {
-background-color: #000;
+
+/* Reservations Styles */
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.rtb-booking-form{
+	text-align: center;
+}
+.entry-content .rtb-booking-form fieldset{
+	border: none;
+	margin: 1em 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+}
+.entry-content .rtb-booking-form fieldset.contact>div{
+	width: 100%;
+	margin-right: 0;
+}
+.rtb-booking-form fieldset legend{
+	font-size: 28px;
+	margin-left: -15px;
+	text-align: left;
+}
+
+.entry-content .rtb-booking-form fieldset>div{
+	margin-top: 2em;
+	width: 97%;
+	margin-right: 3%;
+	float: left;
+}
+
+.rtb-booking-form .rtb-select:after,
+.rtb-booking-form .rtb-text:after{
+	clear: both;
+	display: table;
+	content: "";
+}
+.rtb-booking-form label{
+	float: left;
+	width: 30%;
+	display: block;
+	margin: 0;
+	height: 47px;
+	padding: 11px 10px 12px;
+	border: 1px solid rgba(0,0,0,.3);
+	border-right-width: 0;
+	border-bottom-width: 1px;
+	text-align: left;
+}
+.rtb-textarea label{
+	border-right-width: 1px;
+	border-bottom: 0;
+	width: 100%;
+}
+.rtb-booking-form .rtb-select select,
+.rtb-booking-form .rtb-text input{
+	float:right;
+	width: 70%;
+	max-width: 100%;
+	cursor: pointer;
+	display: block;
+	padding: 11px 20px 12px;
+	border: 1px solid rgba(0,0,0,.3);
+	background: #fafafa;
+	font-size: 14px;
+	line-height: 20px;
+	height: 47px;
+	border-radius: 0;
+}
+.entry-content .rtb-booking-form .message-set{
+	width: 100%;
+	float: none;
+}
+.rtb-booking-form .message-set .add-message{
+	display: none;
+}
+.rtb-booking-form .message-set .message{
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+.entry-content .rtb-booking-form .message textarea{
+	max-width: 100%;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 0;
+	background: #FAFAFA;
+	min-height: 12em;
+}
+
+.rtb-booking-form label:before {
+    content: '';
+    position: relative;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+		font: normal normal normal 14px/1 FontAwesome;
+}
+.rtb-text.date label:before{
+	content: "\f073";
+}
+.rtb-text.time label:before{
+	content: "\f017";
+}
+.rtb-select.party label:before{
+	content: "\f0c0";
+}
+.rtb-text.name label:before{
+	content: "\f007";
+}
+.rtb-text.email label:before{
+	content: "\f003";
+}
+.rtb-text.phone label:before{
+	content: "\f095";
+}
+.rtb-textarea.message label:before{
+	content: "\f044";
+}
+.rtb-booking-form button{
+	box-shadow: none;
+	border: none;
+	background: #000;
+	color: #fff;
+	font-size: 18px;
+	text-shadow: none;
+	text-transform: uppercase;
+	padding: 20px 80px;
+	margin: 1em 0;
+	transition: all .2s ease-in-out;
+}
+.rtb-booking-form button:focus,
+.rtb-booking-form button:hover{
+	background-color: #ab8b65;
+}
+
+@media (min-width: 480px){
+	.rtb-booking-form .rtb-select:after,
+	.rtb-booking-form .rtb-select:before,
+	.rtb-booking-form .rtb-text:after,
+	.rtb-booking-form .rtb-text:before {
+	    content: " ";
+	    display: table;
+	}
+}
+@media (min-width: 768px){
+	.entry-content .rtb-booking-form fieldset{
+		width: 50%;
+		float: left;
+	}
+	.entry-content .rtb-booking-form fieldset legend,
+	.entry-content .rtb-booking-form fieldset>div {
+	    margin-right: 30px;
+	}
+}
+
+/* Food & Drink Styles */
+.entry-content .fdm-menu.fdm-columns-1{
+	width: 80%;
+	margin: 0 auto;
+}
+.entry-content .fdm-menu li{
+	list-style-type: none;
+}
+.entry-content .fdm-section-header{
+	margin-bottom: 4em;
+}
+.fdm-menu .fdm-section-header h3{
+	font-size: 3em;
+	margin-bottom: 0;
+}
+.fdm-item .fdm-item-image{
+	width: 60px;
+	height: 60px;
+	float: left;
+	overflow: hidden;
+	border-radius: 100px;
+	position: relative;
+	z-index: 3;
+	top: 0;
+}
+.fdm-item-has-price .fdm-item-panel p.fdm-item-title{
+	padding: 0 8px 0 1em;
+	color: #000;
+	display: inline;
+	background: #fff;
+	position: relative;
+	z-index: 2;
+}
+.fdm-item-has-price .fdm-item-panel .fdm-item-dots{
+	content: "";
+	position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0;
+  border: 0;
+  height: 3px;
+  display: block;
+  background-image: radial-gradient(circle closest-side,#ccc 80%,#fff 10%);
+  background-position: bottom;
+  background-size: 4px 2px;
+  background-repeat: repeat-x;
+}
+.fdm-item-has-price .fdm-item-panel .fdm-item-content{
+	float:left;
+	width: 80%;
+}
+.fdm-item-has-price .fdm-item-panel .fdm-item-content p{
+	padding-left: 1em;
+	float:left;
+}
+.fdm-item-has-price .fdm-item-panel .fdm-item-price-wrapper{
+	background: #fff;
+	width: auto;
+	padding-left: 1em;
+	z-index: 2;
+}
+
+.widget_fdm_widget_menu .fdm-item .fdm-item-image,
+.widget_fdm_widget_menu .fdm-item-panel .fdm-item-dots,
+.widget_fdm_widget_menu_item .fdm-item-panel .fdm-item-dots{
+	display: none;
+}
+.widget_fdm_widget_menu_item .fdm-item .fdm-item-image{
+	float:none;
+	position: relative;
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+}
+.widget_fdm_widget_menu_item .fdm-item-has-price .fdm-item-panel .fdm-item-price-wrapper{
+	position: relative;
+	text-align: left;
+	padding: 0;
+}
+.widget_fdm_widget_menu .fdm-item-title-block{
+	text-align: left;
+}
+.widget_fdm_widget_menu .fdm-item-has-price .fdm-item-panel .fdm-item-content{
+	width: 100%;
+}
+.widget_fdm_widget_menu .fdm-item-has-price .fdm-item-panel .fdm-item-content p{
+	padding: 0;
+	text-align: left;
+	padding-top: 1em;
+}
+.widget_fdm_widget_menu .fdm-item-has-price .fdm-item-panel p.fdm-item-title{
+	padding-left: 0;
+	text-align: left;
+}
+.widget_fdm_widget_menu_item .fdm-item-has-price .fdm-item-panel p.fdm-item-title{
+	padding-right: 20%;
+	display: inline-block;
+	text-align: left;
+	padding-left: 0;
+}
+.widget_fdm_widget_menu_item .fdm-item-panel .fdm-item-content{
+	width: 100%;
+	padding: 0;
+	text-align: left;
+}
+.widget_fdm_widget_menu .fdm-item-has-price .fdm-item-panel .fdm-item-content
+.widget_fdm_widget_menu_item .fdm-item-content p,
+.widget_fdm_widget_menu_item .fdm-item-has-price .fdm-item-panel .fdm-item-content p{
+	padding: 0;
+}
+
+.widget_search input{
+	width: 100%;
 }

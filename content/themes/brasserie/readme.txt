@@ -35,6 +35,20 @@ License URI: ?http://www.gnu.org/licenses/gpl-2.0.html
 
 Changelog
 --------------------------------------------
+Version 1.9.7
+* Added support for free plugin: Restaurant Reservations
+  -- https://en-gb.wordpress.org/plugins/restaurant-reservations/
+* Added support for free plugin: Food and Drink Menu
+ -- https://wordpress.org/plugins/food-and-drink-menu/
+* Added masonry effect for WordPress core galleries
+* Fixed issue with slider/promo bar on small screen
+* Increased size of theme screenshot
+
+Version 1.9.6
+* Theme Check with current WordPress version
+* Footer updated
+* Description and tags updated
+
 Version 1.9.5
 * Fixed bug from previous update
 
