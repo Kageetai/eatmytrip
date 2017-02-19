@@ -9,7 +9,11 @@
   .site-logo {
     z-index: 1;
 
-    > a {
+    > .logo-background {
+      display: none;
+    }
+
+      > a {
 
       > img {
         height: $logo-height;
@@ -50,6 +54,7 @@
       margin: 7px 15px;
 
       > .logo-background {
+        display: block;
         position: absolute;
         top: $header-height + 3px;
         left: 50%;
