@@ -31,11 +31,12 @@
   }
 
   #masthead {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: center;
+    //align-content: center;
     align-items: flex-start;
 
     overflow-y: visible;
@@ -54,6 +55,11 @@
 
       &.nav-1 {
         order: -1;
+      }
+
+      &.nav-social {
+        position: absolute;
+        right: 0;
       }
 
       li {

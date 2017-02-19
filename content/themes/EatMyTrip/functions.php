@@ -27,6 +27,7 @@ add_action( 'wp_enqueue_scripts', 'eatmytrip_styles' );
 
 function register_menu() {
 	register_nav_menu('secondary-header',__( 'Secondary Header Menu' ));
+	register_nav_menu('social-header',__( 'Social Header Menu' ));
 }
 add_action( 'init', 'register_menu' );
 

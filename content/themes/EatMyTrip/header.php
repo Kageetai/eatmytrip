@@ -54,8 +54,12 @@
 				<nav role="navigation" class="site-navigation main-navigation nav-2">
 					<?php wp_nav_menu( array( 'theme_location' => 'secondary-header' ) ); ?>
 				</nav><!-- .site-navigation .main-navigation -->
-			</header><!-- #masthead .site-header -->
-	</div><!-- #masthead-wrap -->
+
+                <nav role="navigation" class="site-navigation main-navigation nav-social">
+                    <?php wp_nav_menu( array( 'theme_location' => 'social-header' ) ); ?>
+                </nav><!-- .site-navigation .main-navigation -->
+        </header><!-- #masthead .site-header -->
+    </div><!-- #masthead-wrap -->
 	<div id="main" class="site-main">
 
 	<?php
