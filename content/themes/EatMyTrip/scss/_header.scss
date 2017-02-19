@@ -26,7 +26,7 @@
       position: fixed;
       width: 100%;
       z-index: 101;
-      background-color: $nav-brackground;
+      background-color: $header-brackground;
     }
   }
 
@@ -40,13 +40,29 @@
     align-items: flex-start;
 
     overflow-y: visible;
-    height: $header-height + 20px;
+    height: $header-height + $header-padding * 2;
     min-height: 0;
-    padding: $nav-padding 0;
+    padding: $header-padding 0;
     z-index: 100;
 
     .site-logo {
+      position: relative;
       margin: 7px 15px;
+
+      > .logo-background {
+        position: absolute;
+        top: $header-height + 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        //width: 400%;
+        max-width: none;
+        z-index: -1;
+        pointer-events: none;
+
+        path#svg_1 {
+          fill: $header-brackground;
+        }
+      }
     }
 
     .main-navigation {
@@ -75,12 +91,12 @@
 
       .sub-menu {
         width: auto;
-        padding-top: $nav-padding;
+        padding-top: $header-padding;
 
         > li > a {
           height: 100%;
           line-height: 100%;
-          background: $nav-brackground;
+          background: $header-brackground;
         }
       }
 
