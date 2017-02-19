@@ -8,7 +8,7 @@
 				?>
 				<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 				<li>
-					<?php the_post_thumbnail(); ?>
+					<a href="<?=the_permalink()?>"><?php the_post_thumbnail(); ?></a>
 <!--					<div class="caption_wrap">-->
 <!--						<div class="flex-caption">-->
 <!--							<div class="flex-caption-title">-->
