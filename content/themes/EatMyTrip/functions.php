@@ -24,6 +24,12 @@ function eatmytrip_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'eatmytrip_styles' );
 
+
+function register_menu() {
+	register_nav_menu('secondary-header',__( 'Secondary Header Menu' ));
+}
+add_action( 'init', 'register_menu' );
+
 function get_image_id($image_url) {
 	global $wpdb;
 	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));

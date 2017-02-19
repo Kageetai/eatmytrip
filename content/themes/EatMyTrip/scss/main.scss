@@ -1,9 +1,11 @@
-$logo-height: 150px;
-$header-height: 50px;
-$nav-height: $header-height / 2;
 $gold: #c59d5f;
 $cyan: #52babb;
 $brand-color: $cyan;
+$logo-height: 150px;
+$header-height: 50px;
+$nav-height: $header-height / 2;
+$nav-padding: 10px;
+$nav-brackground: rgba(255, 255, 255, .75);
 
 .section {
   padding: 0;

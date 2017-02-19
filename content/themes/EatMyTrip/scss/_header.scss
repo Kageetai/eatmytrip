@@ -1,57 +1,13 @@
-
-.stickyHead {
-  padding: 10px 0;
-
-  &.is-sticky {
-    display: none;
-  }
-}
-
-#page {
-  position: relative;
-
-  #masthead-wrap {
-    position: fixed;
-    width: 100%;
-    z-index: 101;
-    background-color: rgba(255, 255, 255, .75);
-  }
-}
-
 .flex-container {
   border: none;
   margin-bottom: 0;
-
-  .flexslider {
-    //max-height: 100vh;
-    //min-height: 700px;
-
-    > .slides {
-      > li {
-        > img {
-          opacity: 0.7;
-          height: 100% !important;
-        }
-      }
-    }
-  }
 }
 
-.header_container {
-  position: relative;
-  overflow-y: visible;
+#masthead {
   background-color: transparent;
-  height: $header-height;
-  min-height: 0;
-  z-index: 100;
 
   .site-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    text-align: center;
-    margin-top: 6px;
+    z-index: 1;
 
     > a {
 
@@ -60,33 +16,71 @@
       }
     }
   }
+}
 
-  .main-navigation {
-    position: absolute;
-    bottom: 50%;
-    right: 0;
-    height: $nav-height;
-    width: 45%;
-    vertical-align: bottom;
-    transform: translateY(50%);
+@media screen and (min-width: 700px) {
+  #page {
+    position: relative;
 
-    li {
-      background-color: transparent;
-      vertical-align: bottom;
+    #masthead-wrap {
+      position: fixed;
+      width: 100%;
+      z-index: 101;
+      background-color: $nav-brackground;
+    }
+  }
+
+  #masthead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+
+    overflow-y: visible;
+    height: $header-height + 20px;
+    min-height: 0;
+    padding: $nav-padding 0;
+    z-index: 100;
+
+    .site-logo {
+      margin: 7px 15px;
     }
 
-    a {
-      font-size: 16px;
-      height: $nav-height;
-      line-height: $nav-height;
-    }
-
-    ul > li > ul {
+    .main-navigation {
       width: auto;
-    }
+      margin: 0;
 
-    ul > li:hover > ul {
-      top: $nav-height;
+      &.nav-1 {
+        order: -1;
+      }
+
+      li {
+        background-color: transparent;
+        vertical-align: bottom;
+      }
+
+      a {
+        height: $header-height;
+        line-height: $header-height;
+        font-size: 16px;
+      }
+
+      .sub-menu {
+        width: auto;
+        padding-top: $nav-padding;
+
+        > li > a {
+          height: 100%;
+          line-height: 100%;
+          background: $nav-brackground;
+        }
+      }
+
+      ul > li:hover > .sub-menu {
+        top: $header-height;
+      }
     }
   }
 }

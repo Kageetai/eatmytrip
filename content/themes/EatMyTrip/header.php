@@ -31,8 +31,6 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
     <div id="masthead-wrap">
-	<div class="header_placeholder" style="margin-top: 0px;"></div>
-	<div class="stickyHead">
 		<header id="masthead" class="site-header header_container" role="banner">
 		    <?php if ( get_theme_mod( 'brasserie_logo' ) ) : ?>
 		    <div class="site-logo">
@@ -46,15 +44,17 @@
 				</div>
 		<?php endif; ?>
 		
-				<nav role="navigation" class="site-navigation main-navigation">
+				<nav role="navigation" class="site-navigation main-navigation nav-1">
 					<h1 class="assistive-text"><?php _e( 'Menu', 'brasserie' ); ?></h1>
 					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'brasserie' ); ?>"><?php _e( 'Skip to content', 'brasserie' ); ?></a></div>
 		
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-                     
+				</nav><!-- .site-navigation .main-navigation -->
+
+				<nav role="navigation" class="site-navigation main-navigation nav-2">
+					<?php wp_nav_menu( array( 'theme_location' => 'secondary-header' ) ); ?>
 				</nav><!-- .site-navigation .main-navigation -->
 			</header><!-- #masthead .site-header -->
-		</div><!-- .stickyHead -->
 	</div><!-- #masthead-wrap -->
 	<div id="main" class="site-main">
 
