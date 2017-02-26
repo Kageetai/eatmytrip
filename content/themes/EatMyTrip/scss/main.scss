@@ -6,6 +6,7 @@ $header-height: 50px;
 $header-padding: 10px;
 $header-brackground: rgba(255, 255, 255, .8);
 $grey-border: 1px solid #ecf1f5;
+$block-padding: 1.5em;
 
 @mixin clearfix() {
   &::after {

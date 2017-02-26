@@ -25,10 +25,18 @@
             </ul>
         </div>
     </div>
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'brasserie' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+    <div class="recipe-content clearfix">
+        <div class="recipe-ingredients">
+            <h2><?= __('Ingredients')?></h2>
+            <?= get_field( 'ingredients' ) ?>
+        </div>
+
+        <div class="entry-content">
+            <h2><?= __('Preparation')?></h2>
+		    <?php the_content(); ?>
+		    <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'brasserie' ), 'after' => '</div>' ) ); ?>
+        </div><!-- .entry-content -->
+    </div>
 
 	<footer class="entry-meta">
 		<?php
