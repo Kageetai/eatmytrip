@@ -6,11 +6,10 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="recipe-heading clearfix">
-        <div class="blog-image">
-			<?php if ( has_post_thumbnail() ) {
-				$image_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium-cropped' );
-				echo '<img alt="recipe image" src="' . $image_src[0] . '">';
-			} ?>
+        <div class="recipe-image">
+			<?php if ( has_post_thumbnail() ) { ?>
+                <a href="<?php the_post_thumbnail_url(); ?>"><?php the_post_thumbnail( 'medium-cropped' ) ?></a>
+			<?php } ?>
         </div>
         <div class="recipe-meta">
             <div class="entry-meta">

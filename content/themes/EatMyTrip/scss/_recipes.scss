@@ -19,15 +19,15 @@ article.recipe {
   .recipe-heading {
     border-bottom: $grey-border;
 
-    > .blog-image,
+    > .recipe-image,
     > .recipe-meta {
       float: left;
     }
 
-    > .blog-image {
+    > .recipe-image {
       width: 500px;
 
-      > img {
+      > a > img {
         display: block;
       }
     }
