@@ -12,13 +12,18 @@
 				echo '<img alt="recipe image" src="' . $image_src[0] . '">';
 			} ?>
         </div>
-        <div class="recipe-fields">
+        <div class="recipe-meta">
             <div class="entry-meta">
-	            <?php brasserie_posted_on(); ?>
+		        <?php brasserie_posted_on(); ?>
             </div>
-            <div>Serves: <?= get_field( 'serves' ) ?> person</div>
-            <div>Duration: <?= get_field( 'duration' ) ?></div>
-            <div>Difficulty: <?= get_field( 'difficulty' ) ?></div>
+
+            <div class="recipe-excerpt"><?= get_the_excerpt(); ?></div>
+
+            <ul class="recipe-fields">
+                <li><span>Serves:</span> <?= get_field( 'serves' ) ?></li>
+                <li><span>Duration:</span> <?= get_field( 'duration' ) ?></li>
+                <li><span>Difficulty:</span> <?= get_field( 'difficulty' ) ?></li>
+            </ul>
         </div>
     </div>
 	<div class="entry-content">
