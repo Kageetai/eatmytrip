@@ -50,7 +50,8 @@ article.recipe {
       padding: $block-padding;
 
       > .recipe-excerpt,
-      > .entry-meta {
+      > .entry-meta,
+      > .recipe-fields {
         margin-bottom: $block-padding;
         padding-bottom: $block-padding;
         border-bottom: $grey-border;

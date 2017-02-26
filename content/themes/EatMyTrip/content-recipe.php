@@ -23,17 +23,26 @@
                 <li><span>Duration:</span> <?= get_field( 'duration' ) ?></li>
                 <li><span>Difficulty:</span> <?= get_field( 'difficulty' ) ?></li>
             </ul>
+
+            <div class="recipe-categories">
+                <h3><?= __('Categories')?></h3>
+
+                <?= get_the_category_list( __( ', ', 'brasserie' ) ); ?>
+            </div>
         </div>
     </div>
     <div class="recipe-content clearfix">
         <div class="recipe-ingredients">
             <h2><?= __('Ingredients')?></h2>
+
             <?= get_field( 'ingredients' ) ?>
         </div>
 
         <div class="entry-content">
             <h2><?= __('Preparation')?></h2>
+
 		    <?php the_content(); ?>
+
 		    <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'brasserie' ), 'after' => '</div>' ) ); ?>
         </div><!-- .entry-content -->
     </div>
